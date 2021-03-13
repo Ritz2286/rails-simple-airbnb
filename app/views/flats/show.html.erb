@@ -1,0 +1,67 @@
+<div class="card-image" style= "background-image: url('<%= @flat.picture_url %>'); height: 370px; background-size: cover; background-position: center"></div>
+<div class="container d-flex" style="margin-top: -30px">
+
+
+  <div class="col-sm-7">
+    <div class="mb-3 rounded" style="background-color: #eaf4f4">
+      <div class="p-2 ml-3">
+      <h2> <%= @flat.name %></h2>
+      <p> <%= @flat.address %></p>
+      </div>
+    </div>
+    <div class="rounded" style="background-color: #eaf4f4; height: 500px">
+      <div class="p-3 ml-3">
+      <h3>A bit more about this flat...</h3>
+      <%= @flat.description %>
+      </div>
+     <!-- <div> -->
+       <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=<%= @flat.address %>&zoom=13&scale=2&size=1000x1000&maptype=roadmap&markers=color:red%7C<%= @flat.address %>&key=AIzaSyDuwcAKRxOiR4XTUX6T7jafixdS44gItFQ')"></div>
+    <!-- </div> -->
+    </div>
+  </div>
+<!-- --------------------------------------------------------------------- -->
+    <div class="container">
+
+    <form action="">
+      <div class="mb-2 p-3 rounded" style="background-color: #eaf4f4;">
+        <h5>Book the place!</h5>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">From:</span>
+        <input type="text" class="form-control" placeholder="12/10/2021" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-2">
+        <span class="input-group-text" id="basic-addon1">To::</span>
+        <input type="text" class="form-control" placeholder="18/10/2021" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+      <input type="submit" name="book" value="Book" class="btn btn-success mt-2" style="width: 100%;">
+      </div>
+    </form>
+
+<!-- ------------------------------------------------------------------- -->
+      <div class=" p-3 mt-4" style="background-color: #eaf4f4">
+        <div class="ml-3">
+        <h3>Details</h3>
+        <div class="d-flex mt-2">
+          <div class="d-flex mr-4">
+            <i class="material-icons mr-2">people</i><%= @flat.number_of_guests %>
+          </div>
+          <div class="d-flex">
+            <i class="material-icons mr-2">euro_symbol</i><%= @flat.price_per_night %>
+          </div>
+        </div>
+        </div>
+      </div>
+<!-- ---------------------------------------------------------------------- -->
+      <div class="d-flex mt-4 p-3 rounded justify-content-around" style="background-color: #eaf4f4">
+        <h4 class="mr-2">Share</h4>
+        <div class="d-flex">
+          <i class="fab fa-facebook-square fa-2x mr-2"></i>
+          <i class="fab fa-twitter-square fa-2x mr-2"></i>
+          <i class="fab fa-pinterest-square fa-2x mr-2"></i>
+          <i class="fas fa-envelope-square fa-2x"></i>
+        </div>
+      </div>
+      <%= link_to 'Back', flats_path, class: "btn btn-primary w-100 mt-2" %>
+<!-- ----------------------------------------------------------------------- -->
+    </div>
+  </div>
